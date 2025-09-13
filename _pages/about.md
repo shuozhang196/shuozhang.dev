@@ -6,12 +6,8 @@ nav: true
 ---
 
 <div class="home-content">
-  <div class="profile-image">
-    <img src="/assets/img/prof_pic.jpg" alt="Profile Picture" class="rounded-circle img-fluid">
-  </div>
-
-  <div class="profile-text">
-    <h2>Shuo Zhang</h2>
+  <div class="header-text">
+    <h1>Shuo Zhang</h1>
     <p class="image-caption">Duoll, Paul Klee (1938)</p>
   </div>
 
@@ -37,20 +33,15 @@ nav: true
   text-align: center;
 }
 
-.profile-image {
+.header-text {
   margin-bottom: 2rem;
 }
 
-.profile-image img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-.profile-text h2 {
-  font-size: 2rem;
+.header-text h1 {
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #000;
 }
 
 .image-caption {
