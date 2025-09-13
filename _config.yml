@@ -16,6 +16,19 @@ copyright_year: "2024"
 # The URL of your site
 url: "https://shuozhang.dev"
 baseurl: ""
+
+# GitHub Pages settings
+github:
+  repository_name: shuozhang.dev
+  repository_url: https://github.com/shuozhang196/shuozhang.dev
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 # -----------------------------------------------------------------------------
 # Layout settings
 # -----------------------------------------------------------------------------
