@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuo Zhang - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 15pt;
+            line-height: 1.6;
+            color: #555;
+            background: #fff;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 40%;
+            background: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            border-right: 1px solid #eee;
+        }
+        .content {
+            width: 60%;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 2.1em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        h1 strong {
+            font-weight: 600;
+        }
+        .info {
+            color: #ababab;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .nav-links {
+            margin-bottom: 30px;
+        }
+        .nav-links a {
+            display: block;
+            text-decoration: underline;
+            color: #555;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            text-decoration: underline;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            font-size: 0.9em;
+            color: #999;
+        }
+        @media (max-width: 980px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar, .content {
+                width: 100%;
+                padding: 30px;
+                text-align: center;
+                align-items: center;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1><strong>Shuo Zhang<br>&nbsp;&nbsp;张硕</strong></h1>
+            <div class="info">
+                Junior Student<br>
+                Wuhan University<br>
+                Hongyi Honor College
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/research/">Research</a>
+                <a href="/work/">Work</a>
+                <a href="/cv/">Curriculum Vitae<br>中文简历</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/shuozhang196" target="_blank">GitHub</a>
+                <a href="/software/">R packages</a>
+                <a href="">Google Scholar</a>
+                <a href="">School Website</a>
+                <a href="">SSRN</a>
+            </div>
+            <div class="footer">
+                &copy; 2024 Shuo Zhang
+            </div>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>About Me</h2>
+                <p>I am a junior student at Wuhan University, majoring in Economics and Mathematics with a minor in Computer Science. Currently on exchange at Duke Kunshan University (Aug 2025 - Dec 2025).</p>
+                <p>I am preparing for PhD applications.</p>
+                <p>I am exploring my research interests. For my recent work, please refer to my <a href="/work/">Work</a> and <a href="/research/">Research</a> pages.</p>
+                <p>Email: <a href="mailto:sz_whu@163.com">sz_whu@163.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
