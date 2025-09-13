@@ -7,47 +7,46 @@
     <div class="container-fluid">
       <div class="row">
         <!-- Left Sidebar Navigation -->
-        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="col-md-4 col-lg-3 d-md-block sidebar">
           <div class="sidebar-sticky">
             <!-- Name Section -->
             <div class="sidebar-name">
-              <h1 class="site-title">{{ site.first_name }} {{ site.last_name }}</h1>
-              {% if site.chinese_name %}
-              <h2 class="site-chinese-name">{{ site.chinese_name }}</h2>
-              {% endif %}
-              <p class="site-affiliation">{{ site.affiliation }}</p>
-              <p class="site-position">{{ site.position }}</p>
+              <h1 class="site-title">
+                <strong>{{ site.first_name }} {{ site.last_name }}</strong><br>
+                {% if site.chinese_name %}
+                &nbsp;&nbsp;{{ site.chinese_name }}
+                {% endif %}
+              </h1>
+              <div class="site-info">
+                <span class="site-position">{{ site.position }}</span><br>
+                <span class="site-affiliation">{{ site.affiliation }}</span><br>
+                <span class="site-college">College of Business</span>
+              </div>
             </div>
 
             <!-- Navigation Menu -->
             <nav class="nav flex-column">
-              {% for page in site.pages %}
-                {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
-              {% endfor %}
-
               <!-- Home -->
               <a class="nav-link {% if page.permalink == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">
-                {{ about_title }}
+                Home
               </a>
 
-              <!-- Other pages -->
-              {% assign sorted_pages = site.pages | sort: 'nav_order' %}
-              {% for p in sorted_pages %}
-                {% if p.nav and p.autogen == null and p.title != 'books' and p.title != 'publications' and p.title != 'teaching' %}
-                  <a class="nav-link {% if page.title == p.title %}active{% endif %}"
-                     href="{% if p.permalink contains '://' %}{{ p.permalink }}{% else %}{{ p.permalink | relative_url }}{% endif %}">
-                    {{ p.title }}
-                  </a>
-                {% endif %}
-              {% endfor %}
+              <!-- Research -->
+              <a class="nav-link {% if page.title == 'Research' %}active{% endif %}" href="{{ '/research/' | relative_url }}">
+                Research
+              </a>
 
-              <!-- Divider -->
-              <hr class="sidebar-divider">
+              <!-- Curriculum Vitae -->
+              <a class="nav-link {% if page.title == 'Curriculum Vitae' %}active{% endif %}" href="{{ '/cv/' | relative_url }}">
+                Curriculum Vitae<br>中文简历
+              </a>
+
+              <div class="nav-spacer"></div>
 
               <!-- External Links -->
               {% if site.github_username %}
               <a class="nav-link external-link" href="https://github.com/{{ site.github_username }}" target="_blank">
-                GitHub
+                Github
               </a>
               {% endif %}
 
@@ -57,17 +56,21 @@
               </a>
               {% endif %}
 
-              {% if site.email %}
-              <a class="nav-link external-link" href="mailto:{{ site.email }}">
-                Email
+              <!-- School Website (placeholder) -->
+              <a class="nav-link external-link" href="#" target="_blank">
+                School Website
               </a>
-              {% endif %}
+
+              <!-- SSRN (placeholder) -->
+              <a class="nav-link external-link" href="#" target="_blank">
+                SSRN
+              </a>
             </nav>
           </div>
         </div>
 
         <!-- Main Content -->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <main role="main" class="col-md-8 col-lg-9 px-md-4">
           <div class="content">
             {{ content }}
           </div>
@@ -80,6 +83,9 @@
 
     <!-- Custom styles for sidebar layout -->
     <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
       .sidebar {
         position: fixed;
         top: 0;
@@ -87,9 +93,9 @@
         left: 0;
         z-index: 100;
         padding: 48px 0 0;
-        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
         overflow-y: auto;
-        background-color: #f8f9fa;
+        background-color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
       .sidebar-sticky {
@@ -104,55 +110,65 @@
       .sidebar-name {
         margin-bottom: 2rem;
         padding: 0 1rem;
-        text-align: center;
+        text-align: right;
       }
 
       .site-title {
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: normal;
         color: #000;
         margin-bottom: 0.25rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.2;
       }
 
-      .site-chinese-name {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #000;
-        margin-bottom: 0.5rem;
+      .site-title strong {
+        font-weight: normal;
       }
 
-      .site-affiliation,
-      .site-position {
+      .site-info {
+        color: #ababab;
         font-size: 0.9rem;
-        color: #666;
-        margin: 0.25rem 0;
+        line-height: 1.4;
+      }
+
+      .site-position,
+      .site-affiliation,
+      .site-college {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: normal;
       }
 
       .sidebar .nav-link {
-        font-weight: 500;
+        font-weight: normal;
         color: #666;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
+        padding: 0.25rem 1rem;
+        text-decoration: underline;
         border-bottom: 1px solid transparent;
         transition: all 0.2s ease;
         display: block;
+        text-align: right;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
       }
 
       .sidebar .nav-link:hover {
         color: #333;
         border-bottom-color: #999;
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       .sidebar .nav-link.active {
         color: #000;
         border-bottom-color: #000;
-        font-weight: bold;
+        font-weight: normal;
+        text-decoration: underline;
       }
 
       .sidebar .external-link {
         color: #666;
         font-size: 0.9rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
       .sidebar-divider {
@@ -160,9 +176,18 @@
         border-color: #ddd;
       }
 
+      .nav-spacer {
+        display: block;
+        height: 1rem;
+      }
+
       .content {
         margin-top: 2rem;
-        padding: 1rem;
+        padding: 1rem 2rem;
+        background-color: #ffffff;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
       }
 
       /* Hide the original navbar since we have sidebar */

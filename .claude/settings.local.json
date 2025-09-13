@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo:*)",
+      "Bash(ruby:*)",
+      "Bash(bundle:*)",
+      "Bash(export:*)",
+      "Read(//c/**)",
+      "Bash(/c/Ruby34-x64/bin/ruby.exe --version)",
+      "Bash(/c/Ruby34-x64/bin/bundle:*)",
+      "Bash(alias:*)",
+      "Bash(source:*)",
+      "Bash(curl:*)",
+      "Bash(git clone:*)",
+      "Bash(find:*)",
+      "Bash(pkill:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

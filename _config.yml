@@ -8,13 +8,36 @@ last_name: Zhang
 chinese_name: 张硕
 email: "sz_whu@163.com"
 description: "A senior student in Wuhan University"
-position: "Senior Student"
+position: "Junior Student"
 affiliation: "Wuhan University"
+college: "Hongyi Honor College"
+show_avatar: false
+copyright_year: "2024"
 # The URL of your site
 url: "https://shuozhang.dev"
 baseurl: ""
+# -----------------------------------------------------------------------------
+# Layout settings
+# -----------------------------------------------------------------------------
+max_width: 1200px
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
 github_username: shuozhang196
 google_scholar: ""
+linkedin_username: ""
+twitter_username: ""
+# -----------------------------------------------------------------------------
+# Additional links
+# -----------------------------------------------------------------------------
+lab_website: ""
+lab_name: ""
+conference_website: ""
+conference_name: ""
+software_page: false
+school_website: ""
+ssrn: ""
+# -----------------------------------------------------------------------------
+# Analytics
+# -----------------------------------------------------------------------------
+google_analytics: ""

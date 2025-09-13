@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>{{ site.title | default: "Personal Website" }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    {% include head.liquid %}
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <h1><strong>{{ site.first_name }} {{ site.last_name }}<br>&nbsp;&nbsp;{{ site.chinese_name }}</strong></h1><br>
+            <strong>
+                <font color="#ababab">
+                    {{ site.position }}<br />
+                    {{ site.affiliation }}<br />
+                    Hongyi Honor College
+                </font>
+            </strong><br>
+            <br>
+            <a href="{{ '/' | relative_url }}" class="{% if page.permalink == '/' %}active{% endif %}">Home</a><br>
+            <a href="{{ '/research/' | relative_url }}" class="{% if page.title == 'Research' %}active{% endif %}">Research</a><br>
+            <a href="{{ '/cv/' | relative_url }}" class="{% if page.title == 'Curriculum Vitae' %}active{% endif %}">Curriculum Vitae<br>中文简历</a><br>
+            <br>
+            {% if site.lab_website %}
+            <a href="{{ site.lab_website }}" target="_blank">{{ site.lab_name }}</a><br>
+            {% endif %}
+            {% if site.conference_website %}
+            <a href="{{ site.conference_website }}" target="_blank">{{ site.conference_name }}</a><br>
+            {% endif %}
+            {% if site.software_page %}
+            <a href="{{ '/software/' | relative_url }}">R packages</a><br>
+            {% endif %}
+            {% if site.google_scholar %}
+            <a href="{{ site.google_scholar }}" target="_blank">Google Scholar</a><br>
+            {% endif %}
+            {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" target="_blank">Github</a><br>
+            {% endif %}
+            {% if site.school_website %}
+            <a href="{{ site.school_website }}" target="_blank">School Website</a><br>
+            {% endif %}
+            {% if site.ssrn %}
+            <a href="{{ site.ssrn }}" target="_blank">SSRN</a><br>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+        {{ content }}
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                {% if site.twitter_username %}
+                <li><a href="https://twitter.com/{{ site.twitter_username }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                {% endif %}
+                {% if site.github_username %}
+                <li><a href="https://github.com/{{ site.github_username }}" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                {% endif %}
+                {% if site.linkedin_username %}
+                <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                {% endif %}
+                {% if site.email %}
+                <li><a href="mailto:{{ site.email }}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                {% endif %}
+            </ul>
+            <ul class="copyright">
+                <li>&copy; {{ site.copyright_year | default: "2024" }} {{ site.first_name }} {{ site.last_name }}</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/jquery.poptrox.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% include scripts.liquid %}
+
+    <!-- Google Analytics -->
+    {% if site.google_analytics %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+    <!-- Custom styles to match jingyuhe.com -->
+    <style>
+        #header h1 {
+            color: #1f1815 !important;
+            font-size: 1.5em !important;
+            line-height: 1.4 !important;
+            margin-bottom: 1em !important;
+        }
+
+        #header strong, #header b {
+            color: #1f1815 !important;
+        }
+
+        #header nav a {
+            color: #ababab !important;
+            text-decoration: none !important;
+            border-bottom: dotted 1px !important;
+            -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+            -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+            -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+            transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+        }
+
+        #header nav a:hover {
+            color: #333 !important;
+        }
+
+        #header nav a.active {
+            color: #000 !important;
+        }
+
+        /* Remove avatar circle styling */
+        .image.avatar {
+            display: none !important;
+        }
+
+        /* Match jingyuhe.com spacing and alignment */
+        #header .inner {
+            margin: 0 0 2em 0 !important;
+        }
+
+        /* Mobile responsive styles - match jingyuhe.com exactly */
+        @media screen and (max-width: 736px) {
+            #header {
+                background-attachment: scroll !important;
+                background-position: top left, center center !important;
+                background-size: auto, cover !important;
+                left: auto !important;
+                padding: 6em 4em !important;
+                position: relative !important;
+                text-align: center !important;
+                top: auto !important;
+                width: 100% !important;
+                display: block !important;
+            }
+
+            #header .inner {
+                text-align: center !important;
+            }
+
+            #header h1 {
+                font-size: 1.75em !important;
+                color: rgba(255, 255, 255, 0.5) !important;
+            }
+
+            #header h1 br {
+                display: inline !important;
+            }
+
+            #header nav {
+                text-align: center !important;
+            }
+
+            #header nav a {
+                display: inline-block !important;
+                text-align: center !important;
+                margin: 0 0.5em !important;
+            }
+
+            #header nav br {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 1800px) {
+            /* Basic */
+            body, input, select, textarea {
+                font-size: 12pt !important;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            /* Header */
+            #header {
+                padding: 6em 3em 3em 3em !important;
+                width: 30% !important;
+            }
+
+            #header h1 {
+                font-size: 1.25em !important;
+            }
+
+            #header h1 br {
+                display: none !important;
+            }
+
+            /* Main */
+            #main {
+                margin-left: 30% !important;
+                max-width: none !important;
+                padding: 6em 3em 3em 3em !important;
+                width: calc(100% - 30%) !important;
+            }
+        }
+
+        @media screen and (max-width: 980px) {
+            /* Basic */
+            h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+                display: none !important;
+            }
+
+            /* Header */
+            #header {
+                background-attachment: scroll !important;
+                background-position: top left, center center !important;
+                background-size: auto, cover !important;
+                left: auto !important;
+                padding: 6em 4em !important;
+                position: relative !important;
+                text-align: center !important;
+                top: auto !important;
+                width: 100% !important;
+                display: block !important;
+            }
+
+            #header h1 {
+                font-size: 1.75em !important;
+            }
+
+            #header h1 br {
+                display: inline !important;
+            }
+
+            #header nav {
+                text-align: center !important;
+            }
+
+            #header nav a {
+                display: inline-block !important;
+                text-align: center !important;
+                margin: 0 0.5em !important;
+            }
+
+            #header nav br {
+                display: none !important;
+            }
+
+            /* Main */
+            #main {
+                margin: 0 !important;
+                padding: 6em 4em !important;
+                width: 100% !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Header */
+            #header {
+                padding: 4.5em 1.5em !important;
+            }
+
+            #header h1 br {
+                display: none !important;
+            }
+
+            /* Footer */
+            #footer .copyright li {
+                border-left-width: 0 !important;
+                display: block !important;
+                line-height: 2.25em !important;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+    </style>
+
+</body>
+</html>

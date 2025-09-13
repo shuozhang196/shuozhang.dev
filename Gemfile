@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
