@@ -2,10 +2,12 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
   {% include head.liquid %}
   <body>
+    {% include header.liquid %}
+
     <div class="container-fluid">
       <div class="row">
         <!-- Left Sidebar Navigation -->
-        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <!-- Name Section -->
             <div class="sidebar-name">
@@ -73,6 +75,7 @@
       </div>
     </div>
 
+    {% include footer.liquid %}
     {% include scripts.liquid %}
 
     <!-- Custom styles for sidebar layout -->
@@ -86,6 +89,7 @@
         padding: 48px 0 0;
         box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
         overflow-y: auto;
+        background-color: #f8f9fa;
       }
 
       .sidebar-sticky {
@@ -100,6 +104,7 @@
       .sidebar-name {
         margin-bottom: 2rem;
         padding: 0 1rem;
+        text-align: center;
       }
 
       .site-title {
@@ -130,16 +135,19 @@
         text-decoration: none;
         border-bottom: 1px solid transparent;
         transition: all 0.2s ease;
+        display: block;
       }
 
       .sidebar .nav-link:hover {
         color: #333;
         border-bottom-color: #999;
+        text-decoration: none;
       }
 
       .sidebar .nav-link.active {
         color: #000;
         border-bottom-color: #000;
+        font-weight: bold;
       }
 
       .sidebar .external-link {
@@ -154,14 +162,21 @@
 
       .content {
         margin-top: 2rem;
+        padding: 1rem;
+      }
+
+      /* Hide the original navbar since we have sidebar */
+      .navbar {
+        display: none;
       }
 
       /* Mobile responsiveness */
       @media (max-width: 767.98px) {
         .sidebar {
-          position: static;
+          position: relative;
           height: auto;
-          padding-top: 0;
+          padding-top: 1rem;
+          margin-bottom: 2rem;
         }
 
         .sidebar-sticky {
@@ -170,6 +185,7 @@
 
         .content {
           margin-top: 1rem;
+          padding: 0;
         }
       }
     </style>
