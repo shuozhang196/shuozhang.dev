@@ -3,10 +3,13 @@
 # -----------------------------------------------------------------------------
 title: Shuo Zhang
 first_name: Shuo
-middle_name: 
+middle_name:
 last_name: Zhang
+chinese_name: 张硕
 email: "sz_whu@163.com"
-description: "A senior student in Wuhanuniversity"
+description: "A senior student in Wuhan University"
+position: "Senior Student"
+affiliation: "Wuhan University"
 # The URL of your site
 url: "https://shuozhang.dev"
 baseurl: ""
@@ -14,3 +17,4 @@ baseurl: ""
 # Social integration
 # -----------------------------------------------------------------------------
 github_username: shuozhang196
+google_scholar: ""
