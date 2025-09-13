@@ -1,0 +1,14 @@
+# Block GitHub Actions and other non-content pages
+User-agent: *
+Disallow: /actions/
+Disallow: /security/
+Disallow: /pulse/
+Disallow: /graphs/
+Disallow: /network/
+Disallow: /settings/
+
+# Allow search engines to index the main content
+Allow: /
+
+# Sitemap location
+Sitemap: https://shuozhang.dev/sitemap.xml
